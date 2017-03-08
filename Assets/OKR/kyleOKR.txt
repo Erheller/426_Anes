@@ -1,0 +1,4 @@
+Kyle Wong:
+    Create an item model: Wednesday by 3:00 PM (est 3 hours)
+    Create billboards for items: Wednesday by 6:00 PM (est 3 hours)
+    Manipulate items in front of the camera: Wednesday by 11:59 AM (est 6 hours)
