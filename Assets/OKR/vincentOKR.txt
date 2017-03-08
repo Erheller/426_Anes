@@ -1,0 +1,4 @@
+Vincent Pham:
+        Inventory array to store items and implement in game -- Wed by 12 p.m. (est. 1 hour)
+        Create models for items -- Wed by 5 pm (est. 4 hours)
+        Make items appear when selected -- Wed by 7 pm (est. 2 hours)
