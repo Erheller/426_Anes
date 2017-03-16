@@ -23,6 +23,8 @@ public class ProfQuestions : MonoBehaviour {
 
 	public GameObject FPSObject;
 
+	public Text objectiveText;
+
 	void Awake () {
 		this.hideQuestions ();
 
@@ -30,7 +32,7 @@ public class ProfQuestions : MonoBehaviour {
 
 
 
-		qArray[0] = new ProfQuestion ("Hello. How can I help you?", "I came to know more about the subject.", "I'm dropping out of your class.", "I like being here", "I'm dropping out of Medical School", 0);
+		qArray[0] = new ProfQuestion ("How many compressions and breaths per CPR cycle?", "30 compressions, 2 breaths.", "15 compressions, 2 breaths.", "40 compressions, 3 breaths.", "20 compressions, 1 breath.", 0);
 		//qArray[1] = new Question ("Okay, here's the second question. Do you want to be here?", "Yes", "No", "help me i've been stuck on this project for 3 years help", "i want to go to las vegas", 1, 20);
 	}
 
@@ -105,16 +107,21 @@ public class ProfQuestions : MonoBehaviour {
 	void correctAnswer () {
 		//mp.Play ();
 		this.hideQuestions ();
+		FPSObject.GetComponent<FirstPersonController>().enabled = true;
+		objectiveText.text = " Go back to apartment";
+
 	}
 
 	void incorrectAnswer () {
 		//mp.Play ();
 		this.hideQuestions ();
-
+		FPSObject.GetComponent<FirstPersonController>().enabled = true;
+		objectiveText.text = " Go back to apartment";
 
 	}
 
 	public void option0 () {
+		print ("0 selected");
 		if (correct == 0)
 			correctAnswer ();
 		else
@@ -123,6 +130,8 @@ public class ProfQuestions : MonoBehaviour {
 
 
 	public void option1 () {
+		print ("1 selected");
+
 		if (correct == 1)
 			this.correctAnswer ();
 		else
@@ -130,6 +139,8 @@ public class ProfQuestions : MonoBehaviour {
 	}	
 
 	public void option2 () {
+		print ("2 selected");
+
 		if (correct == 2)
 			this.correctAnswer ();
 		else
@@ -137,6 +148,8 @@ public class ProfQuestions : MonoBehaviour {
 	}	
 
 	public void option3 () {
+		print ("3 selected");
+
 		this.loadVegas ();
 
 		if (correct == 3)

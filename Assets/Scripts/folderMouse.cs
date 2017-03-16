@@ -115,10 +115,11 @@ public class folderMouse : MonoBehaviour {
 							objectiveText.text = "Proceed to simulation";
 						}
 					}
-
+					/*
 					else {
 						text.text = "";
 					}
+					*/
 				}
 			}
 
