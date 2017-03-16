@@ -12,6 +12,7 @@ TagManager:
   - Door
   - OfficeDoor
   - Professor
+  - Stethoscope
   layers:
   - Default
   - TransparentFX

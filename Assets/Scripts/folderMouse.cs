@@ -7,7 +7,9 @@ public class folderMouse : MonoBehaviour {
 	public GameObject examineTextObject;
 	public GameObject descriptionTextObject;
 	public GameObject ProfQuestions;
+	public GameObject Objective;
 
+	private Text objectiveText;
 	private Text text;
 	private Text descText;
 	private DescriptionTimer dTimer;
@@ -34,7 +36,7 @@ public class folderMouse : MonoBehaviour {
 		bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo);
 
 		if (hit) {
-
+			text.text = "";
 			GameObject tempObject = hitInfo.transform.gameObject;
 
 			//cabinet opening and closing
@@ -49,12 +51,12 @@ public class folderMouse : MonoBehaviour {
 
 
 
-			else {
+			//else {
 				//picking up items
-				PickUp tempPick = tempObject.GetComponent<PickUp> ();
-				if (tempPick != null) {
-					this.pickUpItem (tempPick);
-				}
+			//	PickUp tempPick = tempObject.GetComponent<PickUp> ();
+			//	if (tempPick != null) {
+			//		this.pickUpItem (tempPick);
+			//	}
 
 
 				else {
@@ -81,7 +83,9 @@ public class folderMouse : MonoBehaviour {
 								this.dTimer.startTimer ();
 							}
 						}
-					} else if (tempObject.tag == "Door") {
+
+					}
+					else if (tempObject.tag == "Door") {
 						text.text = "Go to Professor's office";
 						if (Input.GetMouseButtonDown (0)) {
 							print ("Door Clicked!");
@@ -101,7 +105,18 @@ public class folderMouse : MonoBehaviour {
 
 							ProfQuestions.SetActive (true);
 						}
-					} else {
+					} else if (tempObject.tag == "Stethoscope") {
+						text.text = "Take Stethoscope";
+						if (Input.GetMouseButtonDown (0)) {
+							PickUp tempPick = tempObject.GetComponent<PickUp> ();
+							if (tempPick != null) {
+								this.pickUpItem (tempPick);
+							tempObject.SetActive (false);
+							objectiveText.text = "Proceed to simulation";
+						}
+					}
+
+					else {
 						text.text = "";
 					}
 				}
@@ -133,5 +148,6 @@ public class folderMouse : MonoBehaviour {
 
 		this.text = examineTextObject.GetComponent<Text> ();
 		this.descText = descriptionTextObject.GetComponent<Text> ();
+		this.objectiveText = Objective.GetComponent<Text> ();
 	}
 }
