@@ -80,14 +80,14 @@ public class folderMouse : MonoBehaviour {
 								this.dTimer.startTimer ();
 							}
 						}
-					} 
-					else if (tempObject.tag == "Door") {
+					} else if (tempObject.tag == "Door") {
 						text.text = "Go to Professor's office";
-						if(Input.GetMouseButtonDown(0))
-						{
+						if (Input.GetMouseButtonDown (0)) {
 							print ("Door Clicked!");
-							this.loadOffice();
+							this.loadOffice ();
 						}
+					} else {
+						text.text = "";
 					}
 				}
 			}
