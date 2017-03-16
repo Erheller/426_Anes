@@ -9,6 +9,7 @@ public class folderMouse : MonoBehaviour {
 
 	private Text text;
 	private Text descText;
+	private DescriptionTimer dTimer;
 
 	private float descTimeLeft; 
 
@@ -18,6 +19,7 @@ public class folderMouse : MonoBehaviour {
 	void Start () {
 		getText ();
 		this.descTimeLeft = 0;
+		this.dTimer = descriptionTextObject.GetComponent<DescriptionTimer> ();
 
 		this.items = new int[3];	//inventory size of 3
 	}
@@ -25,11 +27,13 @@ public class folderMouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		/*
 		if (descTimeLeft > 0) {
 			descTimeLeft -= Time.deltaTime;
 		} else {
 			descText.text = "";
 		}
+		*/
 
 
 		RaycastHit hitInfo = new RaycastHit();
@@ -80,10 +84,11 @@ public class folderMouse : MonoBehaviour {
 
 							if (Input.GetMouseButtonDown (0)) {
 								descText.text = tempDesc.getDescription ();
-								this.descTimeLeft = 3;
+								this.dTimer.startTimer ();
 							}
 						}
-					} else if (tempObject.tag == "Door") {
+					} 
+					else if (tempObject.tag == "Door") {
 						text.text = "Go to Professor's office";
 						if(Input.GetMouseButtonDown(0))
 						{
@@ -92,18 +97,21 @@ public class folderMouse : MonoBehaviour {
 						}
 					}
 
-				//no description
+					/*
+					//no description
 					else {
 						text.text = "";
 					}
+					*/
 				}
 			}
 
 		}
-
+		/*
 		else {
 			text.text = "";
 		}
+		*/
 	}
 
 	public void pickUpItem (PickUp pick) {
