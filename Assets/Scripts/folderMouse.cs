@@ -108,6 +108,7 @@ public class folderMouse : MonoBehaviour {
 	{
 		Application.LoadLevel ("Office");
 	}
+		
 
 	void getText() {
 

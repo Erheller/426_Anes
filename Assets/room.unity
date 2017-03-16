@@ -89,8 +89,27 @@ NavMeshSettings:
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
-    accuratePlacement: 0
+    accuratePlacement: 1
   m_NavMeshData: {fileID: 23800000, guid: 2459631229b99834aaf3f079b5f438c3, type: 2}
+--- !u!1 &3270537 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 163552, guid: b4806bcfd71324778b360c0299195b34, type: 2}
+  m_PrefabInternal: {fileID: 977929420}
+--- !u!54 &3270540
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3270537}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &42044203 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a1b071d663ddd2c48b823c734ef1ee65, type: 3}
@@ -1679,7 +1698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13662094, guid: b4806bcfd71324778b360c0299195b34, type: 2}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4806bcfd71324778b360c0299195b34, type: 2}
@@ -2783,6 +2802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timesUntilAngry: 0
   descriptionTextObject: {fileID: 68758003}
+  player: {fileID: 1061862576}
 --- !u!4 &1879200101 stripped
 Transform:
   m_PrefabParentObject: {fileID: 476318, guid: b4806bcfd71324778b360c0299195b34, type: 2}
@@ -2821,6 +2841,18 @@ MonoBehaviour:
   points:
   - {fileID: 1713111063}
   - {fileID: 120654850}
+--- !u!65 &1879200105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879200095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32596052, y: 0.27974743, z: 0.83658975}
+  m_Center: {x: 0.0015258789, y: 0.13422921, z: -0.08170512}
 --- !u!1001 &1915825359
 Prefab:
   m_ObjectHideFlags: 0
