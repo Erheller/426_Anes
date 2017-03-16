@@ -27,13 +27,6 @@ public class folderMouse : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		/*
-		if (descTimeLeft > 0) {
-			descTimeLeft -= Time.deltaTime;
-		} else {
-			descText.text = "";
-		}
-		*/
 
 
 		RaycastHit hitInfo = new RaycastHit();
@@ -96,22 +89,10 @@ public class folderMouse : MonoBehaviour {
 							this.loadOffice();
 						}
 					}
-
-					/*
-					//no description
-					else {
-						text.text = "";
-					}
-					*/
 				}
 			}
 
 		}
-		/*
-		else {
-			text.text = "";
-		}
-		*/
 	}
 
 	public void pickUpItem (PickUp pick) {
