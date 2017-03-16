@@ -12,10 +12,14 @@ public class folderMouse : MonoBehaviour {
 
 	private float descTimeLeft; 
 
+	int[] items;
+
 	// Use this for initialization
 	void Start () {
 		getText ();
 		this.descTimeLeft = 0;
+
+		this.items = new int[3];	//inventory size of 3
 	}
 	
 	// Update is called once per frame
@@ -43,35 +47,55 @@ public class folderMouse : MonoBehaviour {
 				if (Input.GetMouseButtonDown (0)) {
 					tempCabinet.toggleDoors ();
 				}
-			} else {
-				//examining objects
-				Description tempDesc = tempObject.GetComponent<Description> ();
-				//objects that have descriptions
-				if (tempDesc != null) {
-					//special folder exception
-					if (tempObject.tag == "Folder") {
-						text.text = "Go to simulation";
-						if (Input.GetMouseButtonDown (0)) {
-							print ("Folder Clicked!");
-							this.load ();
-						}
-					}
-						
+			}
 
-					//general items with descriptions
-					else {
-						text.text = "Examine\n" + tempObject.name;
 
-						if (Input.GetMouseButtonDown (0)) {
-							descText.text = tempDesc.getDescription ();
-							this.descTimeLeft = 3;
-						}
-					}
+
+			else {
+				//picking up items
+				PickUp tempPick = tempObject.GetComponent<PickUp> ();
+				if (tempPick != null) {
+					this.pickUpItem (tempPick);
 				}
 
-			//no description
+
 				else {
-					text.text = "";
+					//examining objects
+					Description tempDesc = tempObject.GetComponent<Description> ();
+					//objects that have descriptions
+					if (tempDesc != null) {
+						//special folder exception
+						if (tempObject.tag == "Folder") {
+							text.text = "Go to simulation";
+							if (Input.GetMouseButtonDown (0)) {
+								print ("Folder Clicked!");
+								this.load ();
+							}
+						}
+							
+
+						//general items with descriptions
+						else {
+							text.text = "Examine\n" + tempObject.name;
+
+							if (Input.GetMouseButtonDown (0)) {
+								descText.text = tempDesc.getDescription ();
+								this.descTimeLeft = 3;
+							}
+						}
+					} else if (tempObject.tag == "Door") {
+						text.text = "Go to Professor's office";
+						if(Input.GetMouseButtonDown(0))
+						{
+							print ("Door Clicked!");
+							this.loadOffice();
+						}
+					}
+
+				//no description
+					else {
+						text.text = "";
+					}
 				}
 			}
 
@@ -82,9 +106,18 @@ public class folderMouse : MonoBehaviour {
 		}
 	}
 
+	public void pickUpItem (PickUp pick) {
+		this.items [pick.id] = 1;
+	}
+
 	public void load()
 	{
 		Application.LoadLevel("test");
+	}
+
+	public void loadOffice()
+	{
+		Application.LoadLevel ("Office");
 	}
 
 	void getText() {

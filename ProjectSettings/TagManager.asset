@@ -8,6 +8,8 @@ TagManager:
   - Pause
   - Question
   - MovieSphere
+  - avgjoe
+  - Door
   layers:
   - Default
   - TransparentFX

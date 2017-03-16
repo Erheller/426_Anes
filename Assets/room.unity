@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1109,9 +1109,10 @@ GameObject:
   - component: {fileID: 637163483}
   - component: {fileID: 637163482}
   - component: {fileID: 637163481}
+  - component: {fileID: 637163485}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,6 +1182,18 @@ Transform:
   m_Father: {fileID: 1998834006}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &637163485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637163480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baad85d517b85be489231201449b3bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desc: Go to Dean's Office
 --- !u!4 &639309401 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4344052428866418, guid: 5b98c58a1b96ef64497c373596c11d68,
