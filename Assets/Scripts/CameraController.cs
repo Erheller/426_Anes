@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-
+	
 	public float minX = -360.0f;
 	public float maxX = 360.0f;
 
@@ -17,6 +17,11 @@ public class CameraController : MonoBehaviour {
 
 	float rotationY = 0.0f;
 	float rotationX = 0.0f;
+
+	void Start()
+	{
+		Cursor.visible = true;
+	}
 
 	void Update () {
 
