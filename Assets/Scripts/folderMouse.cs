@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class folderMouse : MonoBehaviour {
 	public GameObject examineTextObject;
 	public GameObject descriptionTextObject;
+	public GameObject ProfQuestions;
 
 	private Text text;
 	private Text descText;
@@ -86,6 +87,20 @@ public class folderMouse : MonoBehaviour {
 							print ("Door Clicked!");
 							this.loadOffice ();
 						}
+					} else if (tempObject.tag == "OfficeDoor") {
+						text.text = "Go to Apartment";
+						if (Input.GetMouseButtonDown (0)) {
+							print ("Door Clicked!");
+							this.loadRoom ();
+						}
+					} else if (tempObject.tag == "Professor") {
+						text.text = "Talk to Professor";
+						if (Input.GetMouseButtonDown (0)) {
+							Cursor.visible = true;
+							Cursor.lockState = CursorLockMode.None;
+
+							ProfQuestions.SetActive (true);
+						}
 					} else {
 						text.text = "";
 					}
@@ -108,7 +123,11 @@ public class folderMouse : MonoBehaviour {
 	{
 		Application.LoadLevel ("Office");
 	}
-		
+
+	public void loadRoom()
+	{
+		Application.LoadLevel ("room");
+	}
 
 	void getText() {
 

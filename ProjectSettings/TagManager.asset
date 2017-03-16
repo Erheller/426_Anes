@@ -10,6 +10,8 @@ TagManager:
   - MovieSphere
   - avgjoe
   - Door
+  - OfficeDoor
+  - Professor
   layers:
   - Default
   - TransparentFX
