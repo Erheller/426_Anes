@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1417,6 +1417,7 @@ MonoBehaviour:
   descriptionTextObject: {fileID: 1432102790}
   ProfQuestions: {fileID: 683214466}
   Objective: {fileID: 0}
+  sphere: {fileID: 1169031859433630, guid: a133c429e05a5ee488a46bedf1f973cb, type: 2}
 --- !u!1 &1217215012
 GameObject:
   m_ObjectHideFlags: 0
