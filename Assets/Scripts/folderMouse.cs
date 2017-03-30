@@ -8,6 +8,8 @@ public class folderMouse : MonoBehaviour {
 	public GameObject descriptionTextObject;
 	public GameObject ProfQuestions;
 	public GameObject Objective;
+	public GameObject sphere;
+
 
 	private Text objectiveText;
 	private Text text;
@@ -124,6 +126,19 @@ public class folderMouse : MonoBehaviour {
 			}
 
 		}
+
+
+		if (Input.GetMouseButtonDown(1))
+		{
+			var ball = GameObject.Instantiate (sphere, this.transform.position, Quaternion.identity) as GameObject;
+
+			Vector3 value=new Vector3(0, 1 ,0);
+			ball.transform.position=transform.position + value;
+			ball.GetComponent<Rigidbody> ().velocity = transform.forward * 3;
+			ball.GetComponent<Rigidbody> ().velocity += Vector3.up * 1;
+
+		}
+
 	}
 
 	public void pickUpItem (PickUp pick) {

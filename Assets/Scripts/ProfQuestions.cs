@@ -47,9 +47,10 @@ public class ProfQuestions : MonoBehaviour {
 		correct = 2;
 
 
-		
-		FPSObject.GetComponent<FirstPersonController>().enabled = false;
+		Cursor.lockState = CursorLockMode.None;
 
+		FPSObject.GetComponent<FirstPersonController>().enabled = false;
+		Cursor.visible = true;
 		this.hideQuestions ();
 	}
 
@@ -60,6 +61,8 @@ public class ProfQuestions : MonoBehaviour {
 				this.activateQuestion (q);
 			}
 		}
+
+
 	}
 
 	void activateQuestion (ProfQuestion q) {
