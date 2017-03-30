@@ -100,7 +100,7 @@ public class ProfQuestions : MonoBehaviour {
 	void changeQuestionText (ProfQuestion q) {
 		button0.GetComponentInChildren<Text> ().text = q.getAnswer (0);
 		button1.GetComponentInChildren<Text> ().text = q.getAnswer (1);
-		button2.GetComponentInChildren<Text> ().text = q.getAnswer (2);
+		button2.GetComponentInChildren<Text> ().text = q.getAnswer (2);	
 		button3.GetComponentInChildren<Text> ().text = q.getAnswer (3);
 
 		actualQuestion.text = q.questionText;
@@ -171,7 +171,7 @@ public class ProfQuestions : MonoBehaviour {
 
 }
 
-
+[System.Serializable]
 class ProfQuestion {
 	public string questionText;
 	string [] answers = new string[4];

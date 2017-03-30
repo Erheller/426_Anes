@@ -1,0 +1,17 @@
+﻿Used the following resources:
+TextMesh Pro: https://www.assetstore.unity3d.com/en/#!/content/84126
+
+Free Furniture Set
+https://www.assetstore.unity3d.com/en/#!/content/26678
+Books
+https://www.assetstore.unity3d.com/en/#!/content/3356
+Cardboard Boxes Pack
+https://www.assetstore.unity3d.com/en/#!/content/30695
+Props for the Classroom
+https://www.assetstore.unity3d.com/en/#!/content/5977
+Lamps Pack
+https://www.assetstore.unity3d.com/en/#!/content/55018
+Iguana
+https://www.assetstore.unity3d.com/en/#!/content/57458
+Raw Mocap Data for Mecanim
+https://www.assetstore.unity3d.com/en/#!/content/5330

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class QuestionController : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class QuestionController : MonoBehaviour {
 	Question [] qArray;
 
 	public Text actualQuestion;
+	public TextMeshProUGUI resultText;
+	private float resultTimer;
 
 	void Awake () {
 		this.hideQuestions ();
@@ -27,8 +30,9 @@ public class QuestionController : MonoBehaviour {
 
 
 
-		qArray[0] = new Question ("The right answer is the third choice!", "Not this answer", "Not this one either", "This is correct!", "I want to go to Las Vegas", 3, 10);
-		qArray[1] = new Question ("Okay, here's the second question. Do you want to be here?", "Yes", "No", "help me i've been stuck on this project for 3 years help", "i want to go to las vegas", 1, 20);
+		qArray[0] = new Question ("There is no pulse. What do you do?", "Advanced Airway treatement", "Treat with Amiodarone", "Continue chest compressions and shock with AED", "Administer morphine", 2, 1);
+		qArray[1] = new Question ("The baby weighs 14 kilos. How many joules should you set the defibrilator to?", "56 J", "14 J", "10 J", "28 J", 3, 4);
+		this.resultTimer = 0;
 	}
 
 	// Use this for initialization
@@ -38,8 +42,8 @@ public class QuestionController : MonoBehaviour {
 
 		this.hideQuestions ();
 
-		changeQuestionText ("Do this", "Do that", "Don't do anything", "Help, I'm stuck on this project");
-		correct = 2;
+		//changeQuestionText ("Do this", "Do that", "Don't do anything", "Help, I'm stuck on this project");
+		//correct = 2;
 
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
@@ -54,11 +58,19 @@ public class QuestionController : MonoBehaviour {
 				this.activateQuestion (q);
 			}
 		}
+
+		if (resultTimer > MoviePlayer.timeElapsed) {
+			resultText.enabled = true;
+		} else {
+			resultText.enabled = false;
+		}
 	}
 
 	void activateQuestion (Question q) {
 		mp.Pause ();
 		this.changeQuestionText (q);
+		this.correct = q.getCorrectAnswer ();
+		print (q.getCorrectAnswer ().ToString ());
 		this.showQuestions ();
 		q.disableTime ();
 
@@ -99,14 +111,22 @@ public class QuestionController : MonoBehaviour {
 
 
 	void correctAnswer () {
+		print ("Correct!");
 		mp.Play ();
 		this.hideQuestions ();
+
+		resultText.text = "Correct!";
+		resultTimer = MoviePlayer.timeElapsed + 2;
 	}
 
 	void incorrectAnswer () {
+		print ("Incorrect!");
+
 		mp.Play ();
 		this.hideQuestions ();
 
+		resultText.text = "Inorrect...";
+		resultTimer = MoviePlayer.timeElapsed + 2;
 
 	}
 
@@ -133,7 +153,7 @@ public class QuestionController : MonoBehaviour {
 	}	
 
 	public void option3 () {
-		this.loadVegas ();
+		//this.loadVegas ();
 
 		if (correct == 3)
 			this.correctAnswer ();
