@@ -26,12 +26,15 @@ public class QuestionController : MonoBehaviour {
 	void Awake () {
 		this.hideQuestions ();
 
-		qArray = new Question[2];
+		qArray = new Question[5];
 
 
 
-		qArray[0] = new Question ("There is no pulse. What do you do?", "Advanced Airway treatement", "Treat with Amiodarone", "Continue chest compressions and shock with AED", "Administer morphine", 2, 1);
-		qArray[1] = new Question ("The baby weighs 14 kilos. How many joules should you set the defibrilator to?", "56 J", "14 J", "10 J", "28 J", 3, 4);
+		qArray [0] = new Question ("There is no pulse. What do you do?", "Advanced Airway treatement", "Treat with Amiodarone", "Continue chest compressions and shock with AED", "Administer morphine", 2, 62);
+		qArray [1] = new Question ("The baby weighs 14 kilos. How many joules should you set the defibrilator to?", "56 J", "14 J", "10 J", "28 J", 3, 100);
+		qArray [2] = new Question ("The patient is suffering from hypovolemia. Which one of these in IV fluid cannot be used to treat it?", "Insulin and dextrose", "Sodium Chloride", "Calcium gluninate", "Albumin", 1, 205);
+		qArray [3] = new Question ("Second defibrilation. How many joules will you set the defibrilator to?", "7 J", "14 J", "28 J", "40 J", 3, 259); 
+		qArray [4] = new Question ("Is there anything else you would like to administer?", "Solids", "Fluids", "More epinephrine", "Nothing", 1, 282);
 		this.resultTimer = 0;
 	}
 
